@@ -1,10 +1,23 @@
-let size = 16;
-
 const container = document.querySelector(".container");
-container.style.cssText = `grid-template-columns: repeat(${size}, 1fr); grid-template-rows: repeat(${size},1fr)`;
 
-for (let i=0; i<(size*size); i++) {
-  const sketchDiv = document.createElement('div');
-  container.appendChild(sketchDiv);
-  console.log(i);
+function gridSize(rows, cols) {
+  container.style.setProperty('--grid-rows', rows);
+  container.style.setProperty('--grid-cols', cols);
+
+  for (let i=0; i<(rows*cols); i++) {
+    let sketchDiv = document.createElement('div');
+    container.appendChild(sketchDiv).className = "grid-item";
+    sketchDiv.classList.add(`item-${i}`);
+    console.log(i);
+  };
+};
+
+const gridElements = document.querySelectorAll(".grid-item");
+
+for (const element of gridElements) {
+  element.addEventListener("mouseover", event => {
+    element.classList.add('painted-item');
+  });
 }
+
+gridSize(18, 18);
