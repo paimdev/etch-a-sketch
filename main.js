@@ -9,7 +9,8 @@ function gridSize(rows, cols) {
     let sketchDiv = document.createElement('div');
     container.appendChild(sketchDiv).className = "grid-item";
     sketchDiv.addEventListener('mouseover', event => {
-      sketchDiv.classList.add('painted-item')
+      var randomColor = Math.floor(Math.random()*16777215).toString(16);
+      sketchDiv.style.backgroundColor = `#${randomColor}`;
     });
   };
 };
