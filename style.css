@@ -47,11 +47,24 @@ table {
   --grid-rows: 1;
 }
 
+.button-container {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.reset-button {
+	align-self: center;
+	height: 50px;
+	width: 100px;
+	font-size: 15px;
+}
+
 .container {
   display: grid;
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
-	padding: 300px;
+	padding: 0 100px 0 100px;
 }
 
 .grid-item {

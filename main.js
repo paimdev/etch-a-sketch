@@ -1,4 +1,5 @@
-const container = document.querySelector(".container");
+const container = document.querySelector('.container');
+const button = document.querySelector('.reset-button')
 
 function gridSize(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
@@ -12,6 +13,10 @@ function gridSize(rows, cols) {
     });
   };
 };
+
+button.addEventListener('click', event => {
+  console.log('this button was clicked')
+});
 
 
 
